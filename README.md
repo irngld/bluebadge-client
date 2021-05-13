@@ -1,5 +1,5 @@
 Team 1 (Jackie, Teay, Iain, Steven)
-
+1
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
