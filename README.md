@@ -1,4 +1,4 @@
-Team 1 (Jackie, Teay, Iain, Steven)
+Team 1 (Jackie, Teayarnna, Iain, Steven)
 
 # Getting Started with Create React App
 
