@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Home from './components/home';
 import Inventory from './components/inventory';
-import Favorites from './components/favorites';
+import SearchDrinks from './components/searchDrinks';
 import About from './components/about';
 import Contact from './components/contact';
 import Auth from './components/Auth/auth';
@@ -20,7 +20,7 @@ function App() {
             <Auth />
           </Route>
           <Route path="/inventory" component={Inventory}/>
-          <Route path="/favorites" component={Favorites}/>
+          <Route path="/searchdrinks" component={SearchDrinks}/>
           <Route path="/about" component={About}/>
           <Route path="/contact" component={Contact}/>
         </Switch>
