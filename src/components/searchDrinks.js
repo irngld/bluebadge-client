@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-
+import DrinkCard from "./DrinkCard";
 
 const SearchDrinks = (props) => {
     const [drink, setDrink] = useState("");
@@ -43,7 +43,7 @@ const SearchDrinks = (props) => {
         {
         results==null ? (<p>No Drinks Found</p>) :
         ( results.map((obj, index) => {
-            return  <p key={obj.idDrink}>{obj.strDrink}</p>
+            return  <DrinkCard drink={obj} key={obj.idDrink}/>
         }))
         
         }
