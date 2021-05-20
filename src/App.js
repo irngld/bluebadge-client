@@ -6,7 +6,8 @@ import Navbar from "./components/navbar";
 import Home from "./components/home";
 import Inventory from "./components/inventory";
 import SearchDrinks from "./components/searchDrinks";
-import RandomDrink from "./components/random";
+import RandomDrink from "./components/Random";
+import DetailsPage from "./components/Details";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Auth from "./components/Auth/auth";
@@ -25,6 +26,7 @@ function App() {
         <Route path='/about' component={About} />
         <Route path='/contact' component={Contact} />
         <Route path='/random' component={RandomDrink} />
+        <Route path='/details/:id' component={DetailsPage} />
       </Switch>
     </div>
   );
