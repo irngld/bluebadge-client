@@ -1,25 +1,30 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import DrinkDetails from "./DrinkDetails";
 
-const RandomDrink = () => {
+const DetailsPage = () => {
   const [drink, setDrink] = useState();
+  const { id } = useParams();
 
   const fetcher = () => {
-    fetch(`http://localhost:5000/drink/random`)
+    fetch(`http://localhost:5000/drink/details/${id}`)
       .then((res) => res.json()) // JSON data parsed by `data.json()` call
-      .then((obj) => setDrink(obj.drinks[0]));
+      .then((obj) => {
+        if (obj.drinks) setDrink(obj?.drinks[0]);
+      });
   };
+
+  useEffect(() => {
+    fetcher();
+  }, []);
 
   return (
     <div>
-      <p>GET RANDOM DRINK</p>
-      <button type='button' onClick={fetcher}>
-        Suprise Me, I'm Feeling Lucky!
-      </button>
+      <p>DRINK DETAILS</p>
       {drink == null ? (
         <p>No drink found</p>
       ) : <DrinkDetails drink={drink}/>}
     </div>
   );
 };
-export default RandomDrink;
+export default DetailsPage;
