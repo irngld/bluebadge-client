@@ -20,8 +20,10 @@ const SearchDrinks = (props) => {
             body: JSON.stringify({drink})  // e.g. vodka
         })
         .then(res => res.json() )   // JSON data parsed by `data.json()` call
-        .then(obj => console.log(obj))
-        .then(obj => setResults(obj))
+        .then(obj => {setResults(obj?.drinks?.drinks)
+        console.log(obj)
+        })
+        .catch((error) => {console.error(error)})
           
         }
 
@@ -37,11 +39,15 @@ const SearchDrinks = (props) => {
         <button type="submit"> submit
         </button>
         </form>
-        {/* <p>Drink: {drink}</p>
-        {results && results.drinks.ingredients.map((obj, index) => {
-            return  <p>{obj.strDescription}</p>
-        })}
-        {results && results.drinks} */}
+        <p>Drink: {drink}</p>
+        {
+        results==null ? (<p>No Drinks Found</p>) :
+        ( results.map((obj, index) => {
+            return  <p key={obj.idDrink}>{obj.strDrink}</p>
+        }))
+        
+        }
+    
     </div>
     )
 }
