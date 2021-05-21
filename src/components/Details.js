@@ -8,7 +8,7 @@ const DetailsPage = () => {
 
   const fetcher = () => {
     fetch(`http://localhost:5000/drink/details/${id}`)
-      .then((res) => res.json()) // JSON data parsed by `data.json()` call
+      .then((res) => res.json())
       .then((obj) => {
         if (obj.drinks) setDrink(obj?.drinks[0]);
       });

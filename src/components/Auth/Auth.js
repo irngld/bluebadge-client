@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { verifyPassword } from '../Utils/utilities';
 
 
@@ -11,7 +11,7 @@ const Auth = () => {
     let authenticate = (e) => {
         e.preventDefault();
 
-        if (verifyPassword(password)) {
+        if (verifyPassword(password)) {                     // verifies password meets criteria (upper, lower & num/spec)
             fetch('http://localhost:5000/user/register', {
                 method: 'POST',
                 headers: new Headers({
@@ -19,7 +19,7 @@ const Auth = () => {
                 }),
                 body: JSON.stringify({
                     email,
-                    password: password, // verify that password meets criteria
+                    password: password,
                     firstName,
                     lastName
                 })
