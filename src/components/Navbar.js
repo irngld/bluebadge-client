@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className='navbar'>
-      <Link to='/'>Home</Link>
+      <Link to='/home'>Home</Link>
       <ul>
         <li>
           <Link to='/inventory'>Cabinet</Link>
@@ -15,10 +15,7 @@ const Navbar = () => {
           <Link to='/random'>Random</Link>
         </li>
         <li>
-          <Link to='/about'>About</Link>
-        </li>
-        <li>
-          <Link to='/contact'>Contact</Link>
+          <Link to='/welcome'>Logout</Link>
         </li>
       </ul>
     </div>

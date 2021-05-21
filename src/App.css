@@ -1,4 +1,6 @@
 .App {
+  position: relative;
+  min-height: 100vh;
   text-align: center;
 }
 
@@ -8,6 +10,7 @@
   justify-content: space-between;
   padding: 0 20px;
 }
+
 .navbar h4 {
   cursor: pointer;
 }
@@ -33,33 +36,37 @@
   background-color: gold;
 }
 
-/* .navbar {
-  background-color: #ff69b4;
+.footer {
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  background-color: black;
   padding: 0 20px;
+}
 
-  h4 {
-    cursor: pointer;
-  }
+.footer h4 {
+  cursor: pointer;
+}
 
-  ul {
-    list-style-type: none;
-    display: flex;
-    margin: 0px;
+.footer ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0px;
+}
 
-    li {
-      padding: 20px 30px;
-      a {
-        padding: 20px 0;
-        cursor: pointer;
-        text-decoration: none;
-        color: black;
-      }
+.footer ul > li {
+  padding: 20px 30px;
+}
 
-      &:hover {
-        background-color: pink;
-      }
-    }
-  }
-} */
+.footer li > a {
+  padding: 20px 0; /* 30px */
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.footer li > a:hover {
+  background-color: lightgrey;
+}
