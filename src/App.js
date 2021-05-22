@@ -26,7 +26,7 @@ function App() {
           <Login />
           <Auth />
         </Route>
-        <Route path='/home' />
+        <Route path='/home' component={Home} />
         <Route path='/inventory' component={Inventory} />
         <Route path='/searchdrinks' component={SearchDrinks} />
         <Route path='/random' component={RandomDrink} />

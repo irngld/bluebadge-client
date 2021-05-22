@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { clearToken } from './Auth/UserToken';
+
 
 const Navbar = () => {
   return (
@@ -15,7 +17,7 @@ const Navbar = () => {
           <Link to='/random'>Random</Link>
         </li>
         <li>
-          <Link to='/welcome'>Logout</Link>
+          <Link to='/' onClick={clearToken}>Logout</Link>
         </li>
       </ul>
     </div>
