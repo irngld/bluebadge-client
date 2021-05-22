@@ -1,11 +1,13 @@
+import { useHistory } from "react-router-dom";
 import { useState } from 'react';
-import { verifyPassword } from '../Utils/utilities';
+import { updateToken } from './UserToken';
 
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
+    const history = useHistory();
+
     let authenticate = (e) => {
         e.preventDefault();
 
@@ -21,7 +23,9 @@ const Login = () => {
         })
         .then(res => res.json())
         .then(json => {
+            updateToken(json.token)
             console.log(json);
+            history.push('/home')
         })
         .catch(err => {
             console.log(err);
