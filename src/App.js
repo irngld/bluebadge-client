@@ -19,14 +19,12 @@ import Auth from "./components/Auth/Auth";
 function App() {
   return (
     <div className='App'>
-      <Navbar />
       <Switch>
-        <Route exact path='/'>
-          <Welcome />
-          <Login />
-          <Auth />
+        <Route exact path='/' component={Welcome} />
+        <Route path='/home'>
+          <Navbar />
+          <Home />
         </Route>
-        <Route path='/home' component={Home} />
         <Route path='/inventory' component={Inventory} />
         <Route path='/searchdrinks' component={SearchDrinks} />
         <Route path='/random' component={RandomDrink} />

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { updateToken } from './UserToken';
 
 
+
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -34,30 +35,42 @@ const Login = () => {
     
     return (
         <div>
-            <h3>Login</h3>
             <form onSubmit={authenticate}>
-                <input 
+            
+            
+                <div className="form-group">
+                    <label>Email</label>
+                    <input 
                     id='email'
                     aria-label='email'
-                    placeholder='name@tld.com'
-                    type='text'
+                    className="form-control" 
+                    placeholder="Enter email"
+                    type='email'
                     value={email}
                     onChange={(event) => { setEmail(event.target.value) }}
+
                 />
-                <input 
+                </div>
+
+                <div className="form-group">
+                    <label>Password</label>
+                    <input 
                     id='password'
                     aria-label='password'
-                    placeholder='password'
+                    className="form-control"
+                    placeholder="Enter password"
                     type='password'
                     value={password}
                     onChange={(event) => { setPassword(event.target.value) }}
                 />
-                <button>
-                    Submit
-                </button>
+                </div>
+
+                
+                <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                <p className="forgot-password text-right">
+                    Don't have an account? <a href="#">Register here</a>
+                </p>
             </form>
-            <p>Email: {email}</p>
-            <p>Password: {password}</p>
         </div>
     )
 }
