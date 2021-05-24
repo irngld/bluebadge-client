@@ -52,7 +52,7 @@ const Login = () => {
                 />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group mt-2">
                     <label>Password</label>
                     <input 
                     id='password'
@@ -66,8 +66,8 @@ const Login = () => {
                 </div>
 
                 
-                <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
-                <p className="forgot-password text-right">
+                <button type="submit" className="btn btn-dark btn-block mt-3">Sign in</button>
+                <p className="forgot-password text-right mt-3">
                     Don't have an account? <a href="#">Register here</a>
                 </p>
             </form>
