@@ -9,6 +9,19 @@ const DrinkCard = ({drink}) => {
         <Link to={`/details/${drink.idDrink}`}>
             <p key={drink.idDrink}>{drink.strDrink}</p>
         </Link> 
+
+        <Card className="bg-dark text-white d-flex"
+        style={{height: '450px', width: '300px'}}>
+  <Card.Img src={drink.strDrinkThumb} alt="Card image" />
+  <Card.ImgOverlay>
+    <Card.Title>{drink.strDrink}</Card.Title>
+    <Card.Text>
+      This is a wider card with supporting text below as a natural lead-in to
+      additional content. This content is a little bit longer.
+    </Card.Text>
+    <Card.Text>Last updated 3 mins ago</Card.Text>
+  </Card.ImgOverlay>
+</Card>
     </div>
     )
 
