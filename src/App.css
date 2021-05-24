@@ -40,7 +40,16 @@
   min-height: 100vh;
 }
 
+.rooster-container {
+  margin-top: 100px;
+}
+.rooster {
+  height: 250px;
+}
 
+.title{
+  font-family: 'Frijole', cursive;
+}
 .footer {
   position: absolute;
   bottom: 0;
