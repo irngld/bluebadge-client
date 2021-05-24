@@ -21,6 +21,7 @@ function App() {
     <div className='App'>
       <Switch>
         <Route exact path='/' component={Welcome} />
+        <Route path='/register' component={Auth}/>
         <Route path='/home'>
           <Navbar />
           <Home />

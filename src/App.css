@@ -41,16 +41,47 @@
 }
 
 .rooster-container {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 .rooster {
-  height: 250px;
+  height: 200px;
 }
 
 .title{
   font-family: 'Frijole', cursive;
 }
+
+.key-features {
+  font-family: 'Frijole', cursive;
+  padding-top: 70px;
+}
+
+.drink-container {
+  margin-top: 50px;
+}
+.drink-container h5 {
+  margin-top: 20px;
+}
+
+.drink-image {
+  height: 180px;
+}
+
 .footer {
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.footer p{
+  padding-top: 10px;
+}
+
+/* .footer {
   position: absolute;
   bottom: 0;
   display: flex;
@@ -76,11 +107,11 @@
 
 .footer li > a {
   padding: 20px 0; /* 30px */
-  cursor: pointer;
+  /* cursor: pointer;
   text-decoration: none;
   color: white;
 }
 
 .footer li > a:hover {
   background-color: lightgrey;
-}
+} */ 
