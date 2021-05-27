@@ -36,6 +36,13 @@
   background-color: gold;
 }
 
+.icons {
+  margin-top: 80px;
+}
+
+.drink-link {
+  text-decoration: none;
+}
 .welcomeText {
   min-height: 100vh;
 }
