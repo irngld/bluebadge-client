@@ -13,7 +13,7 @@ const SearchDrinks = (props) => {
 
     const fetcher = (e) => {
 
-       e.preventDefault()
+        e.preventDefault()
 
         console.log(drink)
 
