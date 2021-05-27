@@ -14,8 +14,7 @@ const SearchDrinks = (props) => {
   const [showSearch, setShowSearch] = useState(true);
 
   const fetcher = (drink) => {
-    // e.preventDefault();
-
+    
     // let defaultAPI = (ingredients?.includes(drink) == false) ? `http://localhost:5000/drink/type` : `http://localhost:5000/drink/name`;
     let defaultAPI = `http://localhost:5000/drink/type`;
 

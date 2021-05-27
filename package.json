@@ -12,6 +12,7 @@
     "react-animated-heart": "*",
     "react-bootstrap": "^1.6.0",
     "react-dom": "^17.0.2",
+    "react-rating-stars-component": "^2.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "reactstrap": "^8.9.0",
