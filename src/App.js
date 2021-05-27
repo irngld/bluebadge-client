@@ -19,6 +19,7 @@ import Auth from "./components/Auth/Auth";
 
 function App() {
   return (
+    <>
     <div className='App'>
       <Switch>
         <Route exact path='/' component={Welcome} />
@@ -32,13 +33,15 @@ function App() {
         <Route path='/random' component={RandomDrink} />
         <Route path='/details/:id' component={DetailsPage} />
       </Switch>
-      <Footer>
-        <Switch>
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Contact} />
-        </Switch>
-      </Footer>
+
     </div>
+          <Footer>
+          <Switch>
+            <Route path='/about' component={About} />
+            <Route path='/contact' component={Contact} />
+          </Switch>
+        </Footer>
+        </>
   );
 }
 

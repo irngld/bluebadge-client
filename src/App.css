@@ -1,6 +1,6 @@
 .App {
   position: relative;
-  min-height: 100vh;
+  min-height: 96vh;
   text-align: center;
 }
 
@@ -89,10 +89,22 @@
 .reg-form {
   text-align: left;
 }
+
+.search-drinks {
+  height: 96vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.search-bar {
+  height: 50px;
+  font-size: 1.25rem !important;
+}
 .footer {
   background-color: black;
   color: white;
-  position: absolute;
+
   bottom: 0;
   display: flex;
   width: 100%;
