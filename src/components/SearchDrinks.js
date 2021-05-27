@@ -88,7 +88,10 @@ const SearchDrinks = (props) => {
             className='results-background'
             style={{ backgroundImage: `url(${wood})` }}
           >
-            <p>Drink: </p>
+              <Container className='d-flex ps-4'>
+              <h4 className='search-title pt-5 pb-3' style={{ color: 'white'}}>Showing search results for: </h4>
+              </Container>
+                
             <Container className='d-flex flex-wrap'>
               {results == null ? (
                 <p>No Drinks Found</p>
