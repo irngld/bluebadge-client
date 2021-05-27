@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import { Switch, Route } from "react-router-dom";
@@ -16,32 +16,42 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Login from "./components/Auth/Login";
 import Auth from "./components/Auth/Auth";
+import HamburgerMenu from "./components/HamburgerMenu";
+import Favorites from "./components/Favorites";
 
 function App() {
   return (
     <>
-    <div className='App'>
-      <Switch>
-        <Route exact path='/' component={Welcome} />
-        <Route path='/register' component={Auth}/>
-        <Route path='/home'>
-          <Navbar />
-          <Home />
-        </Route>
-        <Route path='/inventory' component={Inventory} />
-        <Route path='/searchdrinks' component={SearchDrinks} />
-        <Route path='/random' component={RandomDrink} />
-        <Route path='/details/:id' component={DetailsPage} />
-      </Switch>
-
-    </div>
-          <Footer>
-          <Switch>
-            <Route path='/about' component={About} />
-            <Route path='/contact' component={Contact} />
-          </Switch>
-        </Footer>
-        </>
+      <div className='App'>
+        <Switch>
+          <Route exact path='/' component={Welcome} />
+          <Route path='/register' component={Auth} />
+          <Route path='/home'>
+            <HamburgerMenu />
+            <Home />
+          </Route>
+          <Route path='/favorites'>
+            <HamburgerMenu />
+            <Favorites />
+          </Route>
+          <Route path='/searchdrinks'>
+            <HamburgerMenu />
+            <SearchDrinks />
+          </Route>
+          <Route path='/random'>
+            <HamburgerMenu />
+            <RandomDrink />
+          </Route>
+          <Route path='/details/:id' component={DetailsPage} />
+        </Switch>
+      </div>
+      <Footer>
+        <Switch>
+          <Route path='/about' component={About} />
+          <Route path='/contact' component={Contact} />
+        </Switch>
+      </Footer>
+    </>
   );
 }
 

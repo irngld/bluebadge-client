@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import DrinkCard from "./DrinkCard";
 import Details from "./Details";
 import background from "../img/searchDrinksBackground.jpg";
-import SearchBar from '@opuscapita/react-searchbar';
+import SearchBar from "@opuscapita/react-searchbar";
+import wood from "../img/wood.jpg";
 
 const SearchDrinks = (props) => {
   const [currentDrinkId, setCurrentDrinkId] = useState();
@@ -14,7 +15,6 @@ const SearchDrinks = (props) => {
   const [showSearch, setShowSearch] = useState(true);
 
   const fetcher = (drink) => {
-    
     // let defaultAPI = (ingredients?.includes(drink) == false) ? `http://localhost:5000/drink/type` : `http://localhost:5000/drink/name`;
     let defaultAPI = `http://localhost:5000/drink/type`;
 
@@ -27,7 +27,7 @@ const SearchDrinks = (props) => {
       headers: new Headers({
         "Content-Type": "application/json",
       }),
-      body: JSON.stringify({drink}), // e.g. vodka
+      body: JSON.stringify({ drink }), // e.g. vodka
     })
       .then((res) => res.json()) // JSON data parsed by `data.json()` call
       .then((obj) => {
@@ -68,16 +68,30 @@ const SearchDrinks = (props) => {
     <>
       {!showDetails ? (
         showSearch ? (
-          <div className='search-drinks' style={{ backgroundImage: `url(${background})`}}>
-            <div className="h-25 w-100 d-flex align-items-center justify-content-center">
-            <SearchBar className=" w-50" inputClassName="search-bar" onSearch={fetcher} 
-            translations={{searchPlaceHolder:'Enter drink name or ingredient'}} />   
+          <div
+            className='search-drinks'
+            style={{ backgroundImage: `url(${background})` }}
+          >
+            <div className='h-25 w-100 d-flex align-items-center justify-content-center'>
+              <SearchBar
+                className=' w-50'
+                inputClassName='search-bar'
+                onSearch={fetcher}
+                translations={{
+                  searchPlaceHolder: "Enter drink name or ingredient",
+                }}
+              />
             </div>
-
           </div>
         ) : (
-          <div>
-            <p>Drink: </p>
+          <div
+            className='results-background'
+            style={{ backgroundImage: `url(${wood})` }}
+          >
+              <Container className='d-flex ps-4'>
+              <h4 className='search-title pt-5 pb-3' style={{ color: 'white'}}>Showing search results for: </h4>
+              </Container>
+                
             <Container className='d-flex flex-wrap'>
               {results == null ? (
                 <p>No Drinks Found</p>
@@ -93,7 +107,15 @@ const SearchDrinks = (props) => {
                 })
               )}
             </Container>
-            <button type='button' onClick={() => setShowSearch(true)}>Search Again </button>
+            <Button
+              className='search-again-button'
+              type='button'
+              onClick={() => setShowSearch(true)}
+              size='lg'
+              style={{ color: "white", background: "#faa51a", border: "white" }}
+            >
+              Search Again
+            </Button>
           </div>
         )
       ) : (
