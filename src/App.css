@@ -4,7 +4,7 @@
   text-align: center;
 }
 
-.navbar {
+/* .navbar {
   background-color: tan;
   display: flex;
   justify-content: space-between;
@@ -26,7 +26,7 @@
 }
 
 .navbar li > a {
-  padding: 20px 0; /* 30px */
+  padding: 20px 0;
   cursor: pointer;
   text-decoration: none;
   color: black;
@@ -34,6 +34,23 @@
 
 .navbar li > a:hover {
   background-color: gold;
+} 
+*/
+
+.menu-item > a {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  text-align: left;
+  color: #faf9f6;
+  font-size: 25px;
+  text-decoration: none;
+  margin: 25px 0;
+}
+
+.menu-item > a:hover {
+  background-color: darkgray;
+  color: black;
 }
 
 .menu-item {
