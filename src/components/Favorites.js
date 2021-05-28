@@ -5,13 +5,6 @@ import Details from "./Details";
 import background from "../img/searchDrinksBackground.jpg";
 
 const Favorites = (props) => {
-  const [currentDrinkId, setCurrentDrinkId] = useState();
-  const [results, setResults] = useState();
-  const [ingredients, setIngredients] = useState();
-  const data = props;
-  const [showDetails, setShowDetails] = useState(false);
-  const [showSearch, setShowSearch] = useState(true);
-
   let getFavDrinks = "http://localhost:5000/favorites/show";
   const token = localStorage.getItem("token");
 
