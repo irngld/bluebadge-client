@@ -12,7 +12,7 @@ const Home  = () => {
         <HamburgerMenu />
         <Row>
     <div className='home-text'>
-      <h3>Welcome, </h3>
+      <h3>Welcome! </h3>
       <br />
       <h5>Let's find your perfect cocktail! Choose an option below.</h5>
     </div>
