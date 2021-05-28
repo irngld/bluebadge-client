@@ -39,6 +39,7 @@ const Favorites = (props) => {
                     updatedAt: drink.updatedAt
                 }
             });
+            console.log(drinks)
             setResults(drinks)
         })
         .catch(err => {

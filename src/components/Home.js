@@ -11,7 +11,7 @@ const Home  = () => {
     <div>
         <HamburgerMenu />
         <Row>
-    <div className='home-text mt-5 mb-3'>
+    <div className='home-text'>
       <h3>Welcome, </h3>
       <br />
       <h5>Let's find your perfect cocktail! Choose an option below.</h5>
