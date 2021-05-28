@@ -12,10 +12,6 @@ const Favorites = (props) => {
   const [showDetails, setShowDetails] = useState(false);
   const [showSearch, setShowSearch] = useState(true);
 
-  let getFavDrinks = 'http://localhost:5000/favorites/show';
-  const token = localStorage.getItem('token');
-
-
   let getFavDrinks = "http://localhost:5000/favorites/show";
   const token = localStorage.getItem("token");
 
