@@ -53,8 +53,15 @@
   color: black;
 }
 
+.menu-item {
+  text-decoration: none;
+}
+
+.home-text {
+  margin-top: 70px;
+}
 .icons {
-  margin-top: 80px;
+  margin-top: 250px;
 }
 
 .drink-link {
