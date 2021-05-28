@@ -5,19 +5,12 @@ import Details from "./Details";
 import background from "../img/searchDrinksBackground.jpg";
 
 const Favorites = (props) => {
-  const [currentDrinkId, setCurrentDrinkId] = useState();
-  const [results, setResults] = useState();
-  const [ingredients, setIngredients] = useState();
-  const data = props;
-  const [showDetails, setShowDetails] = useState(false);
-  const [showSearch, setShowSearch] = useState(true);
 
+  const [results, setResults] = useState();
+  
   let getFavDrinks = 'http://localhost:5000/favorites/show';
   const token = localStorage.getItem('token');
 
-
-  let getFavDrinks = "http://localhost:5000/favorites/show";
-  const token = localStorage.getItem("token");
 
   const fetcher = () => {
     fetch(getFavDrinks, {

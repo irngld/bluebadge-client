@@ -13,9 +13,10 @@ const SearchDrinks = (props) => {
   const data = props;
   const [showDetails, setShowDetails] = useState(false);
   const [showSearch, setShowSearch] = useState(true);
+  const [currentSearch, setCurrentSearch] = useState('');
 
   const fetcher = (drink) => {
-    // let defaultAPI = (ingredients?.includes(drink) == false) ? `http://localhost:5000/drink/type` : `http://localhost:5000/drink/name`;
+    setCurrentSearch(drink)
     let defaultAPI = `http://localhost:5000/drink/type`;
 
     if (ingredients?.includes(drink) == false) {
@@ -89,7 +90,7 @@ const SearchDrinks = (props) => {
             style={{ backgroundImage: `url(${wood})` }}
           >
               <Container className='d-flex ps-4'>
-              <h4 className='search-title pt-5 pb-3' style={{ color: 'white'}}>Showing search results for: </h4>
+              <h4 className='search-title pt-5 pb-3' style={{ color: 'white'}}>Showing search results for: {currentSearch} </h4>
               </Container>
                 
             <Container className='d-flex flex-wrap'>
