@@ -24,6 +24,7 @@ transition: ease background-color 250ms;
 
 
 const RandomDrink = () => {
+  
   const [drink, setDrink] = useState();
 
   const fetcher = () => {
