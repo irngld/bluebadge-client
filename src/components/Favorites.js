@@ -53,8 +53,9 @@ const Favorites = (props) => {
 
   return (
     <div>
-      <p>FAVORITES HERE</p>
-      <Container className="d-flex flex-wrap">
+      
+      <h2 className="search-title">My Favorites</h2>
+      <Container className="d-flex flex-wrap pt-5 pb-3">
         {results == null ? (
           <p>No Favorites Found</p>
         ) : (
