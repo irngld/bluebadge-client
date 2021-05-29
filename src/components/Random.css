@@ -1,4 +1,4 @@
-.mainrandom h1 {
+.main-random {
   font-display: block;
   font-family: monospaces;
   font-weight: 500;
@@ -7,7 +7,7 @@
   text-shadow: brown 3px;
 }
 
-.mainrandom h5 {
+.mainrandoms {
   font-family: monospaces;
   letter-spacing: 10px;
 }

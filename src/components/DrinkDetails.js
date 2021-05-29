@@ -4,50 +4,31 @@ import background from "../img/fence.jpg";
 import '../components/DrinkDetails.css';
 import { Container, Button, Collapse, Card, CardImg, CardTitle, CardBody, Fade, CardLink,CardSubtitle, Row} from 'reactstrap';
 import styled from 'styled-components';
-
-// const Button = styled.button`
-// margin: 0 5px;
-//   padding: 8px 14px;
-//   background: rgba(155, 155, 155, 0.2);
-//   color: #fff;
-//   cursor: pointer;
-//   border: 1px solid #fff;
-//   outline: 0;
-//   font-weight: 300;
-//   :hover {
-//     opacity: 0.8;
-//   }
-// ` 
+import FavIcon from "./FavIcon";
+import RatingStars from "./RatingStars";
 
 
-
-const DrinkDetails = ({drink}) => {
-  const [open, setOpen] = useState(false);
-  
+const DrinkDetails = ({drink, onSelect, onUpdate }) => {
+const [open, setOpen] = useState(false);
+const data = drink;
+  const [showSearch, setShowSearch] = useState(true);
     return (
         <>
         <div className="mainDetails">
           <div className="mainDetailCard" style={{backgroundImage: `url(${background})`, width:'100vw', margin: 0, height:'100vh',backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
          
-          <Card className="drink-labels" style={{ width: "250px", margin: "5px", boxShadow: '0 4px 8px 0 rgba(0,0,0,.2)' }}>
+          <Card className="drink-labels" style={{ height: "auto", width: "400px" }}>
+
+
+
           <Container className="drinking">
-          <CardImg className="drink-thumb" style={{height: "250px"}} src={drink.strDrinkThumb}/>
+          <CardImg className="drink-thumb" src={drink.strDrinkThumb} style={{height: "250px"}} onClick={ () => onSelect(drink.idDrink)} />
 
 
 <CardTitle>
     <h2 className="card-title">{drink.strDrink}</h2>
     </CardTitle>
-    <Row className="card-names" style={{margin:'auto', justifyContent:'center'}}>
-
-    <Button className="drink-details"
-        onClick={() => setOpen(!open)}
-        aria-controls="example-collapse-text"
-        aria-expanded={open}
-      >
-       Drink Details 
-      </Button>
-
-      <Fade in={open}>
+   
         <div id="drink-description">
           <h3 className="drink-names">{drink.strMeasure1 && `${drink.strMeasure1} ${drink.strIngredient1}`}</h3>
           <h3 className="drink-names">{drink.strMeasure2 && `${drink.strMeasure2} ${drink.strIngredient2}`}</h3>
@@ -57,13 +38,31 @@ const DrinkDetails = ({drink}) => {
           <h3 className="drink-names">{drink.strMeasure6 && `${drink.strMeasure6} ${drink.strIngredient6}`}</h3>
           <h4 className="drink-instructions">{drink.strInstructions}</h4>
           </div>
-      </Fade>
-      </Row>
+     
+      <hr />
+        <div className="d-flex justify-content-between align-items-top bg-light">
+          <div className="pt-3 ps-4">
+            <RatingStars className="stars" />
+          </div>
+          <div className="">
+            <FavIcon className="heart" drink={drink} onUpdate={onUpdate} />
+          </div>
+        </div>
       </Container>
       </Card>
-      
+  
           </div>
           </div>
+
+          {/* <Button
+              className='search-again-button'
+              type='button'
+              onClick={() => setShowSearch(true)}
+              size='lg'
+              style={{ color: "white", background: "#faa51a", border: "white" }}
+            >
+              Search Again
+            </Button> */}
         </>
       )
 }

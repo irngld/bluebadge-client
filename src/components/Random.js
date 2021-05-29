@@ -46,7 +46,7 @@ const RandomDrink = () => {
     // backgroundPosition: 
     
  }}>
-        <h1>GET RANDOM DRINK</h1>
+        <h1 className= "main-random">GET RANDOM DRINK</h1>
         <hr/>
         <div className="randombutton">
       <Button type='button' onClick={fetcher}>
@@ -55,7 +55,7 @@ const RandomDrink = () => {
       <br/>
       <br/>
       {drink == null ? (
-        <h5>LOADING A SURPRISE</h5>
+        <h5 className="mainrandoms">LOADING A SURPRISE</h5>
       ) :
        <DrinkDetails drink={drink}/>}
        </div>
