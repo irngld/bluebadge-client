@@ -4,6 +4,7 @@ import '../components/Random.css';
 import background from "../img/woodbackground.jpg";
 import styled from "styled-components";
 
+
 const Button = styled.button`
 background-color: transparent;
 color: #b07c0d;
@@ -22,20 +23,23 @@ transition: ease background-color 250ms;
 `
 
 
-
 const RandomDrink = () => {
   
   const [drink, setDrink] = useState();
+  const[toggle, setToggle] = useState(false)
 
   const fetcher = () => {
     fetch(`http://localhost:5000/drink/random`)
       .then((res) => res.json()) // JSON data parsed by `data.json()` call
-      .then((obj) => setDrink(obj.drinks[0]));
+      .then((obj) => setDrink(obj.drinks[0]))
+      .then (() => setToggle(!toggle)) 
   };
 
-  return (
+ return ( 
+   <>
+   {!toggle ? 
+    <>
     <div className="main">
-     
    <div className="mainRandom" style={{backgroundImage: `url(${background})`, 
    width:'100vw',
    margin: '0',
@@ -49,18 +53,21 @@ const RandomDrink = () => {
         <h1 className= "main-random">GET RANDOM DRINK</h1>
         <hr/>
         <div className="randombutton">
-      <Button type='button' onClick={fetcher}>
+      <Button type='button' onClick= {fetcher}>
         Suprise Me, I'm Feeling Lucky!
       </Button>
-      <br/>
-      <br/>
-      {drink == null ? (
-        <h5 className="mainrandoms">LOADING A SURPRISE</h5>
-      ) :
-       <DrinkDetails drink={drink}/>}
-       </div>
+      </div>
       </div>
     </div>
-  );
-};
+      </> : 
+        <>
+      {drink == null ? (
+        <h5 className="mainrandoms">LOADING A SURPRISE</h5>
+        ) :
+       <DrinkDetails drink={drink}/>}
+      
+    </>
+  
+}
+</>)}
 export default RandomDrink;
