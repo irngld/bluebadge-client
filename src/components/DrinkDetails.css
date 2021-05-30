@@ -3,6 +3,7 @@
   padding: 25px 12px 18px;
   background-color: linear-gradient;
 } */
+
 .mainDetailCard {
   display: flex;
   align-items: center;
@@ -20,26 +21,29 @@
 }
 
 .card-title {
-  color: rgb(96, 5, 5);
+  color: rgb(136, 87, 87);
   font-family: monospaces;
   font-display: block;
-  font-weight: 500;
-  font-size: 40px;
+  font-size: 30px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  text-shadow: brown 3px;
+  text-shadow: brown 5px;
 }
 
 .drink-names {
-  color: rgb(52, 4, 4);
+  color: rgb(183, 78, 78);
   font-family: monospaces;
   font-display: block;
+  font-size: 25px;
+  text-transform: capitalize;
 }
 
 .drink-instructions {
-  color: rgb(41, 0, 0);
+  color: rgb(80, 42, 42);
   font-family: monospaces;
   font-display: block;
+  font-size: 20px;
+  text-transform: capitalize;
 }
 /* .drink-labels {
   display: flex;

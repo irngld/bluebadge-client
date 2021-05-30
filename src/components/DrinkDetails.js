@@ -26,17 +26,17 @@ const data = drink;
 
 
 <CardTitle>
-    <h2 className="card-title">{drink.strDrink}</h2>
+    <h3 className="card-title">{drink.strDrink}</h3>
     </CardTitle>
    
         <div id="drink-description">
-          <h3 className="drink-names">{drink.strMeasure1 && `${drink.strMeasure1} ${drink.strIngredient1}`}</h3>
-          <h3 className="drink-names">{drink.strMeasure2 && `${drink.strMeasure2} ${drink.strIngredient2}`}</h3>
-          <h3 className="drink-names">{drink.strMeasure3 && `${drink.strMeasure3} ${drink.strIngredient3}`}</h3>
-          <h3 className="drink-names">{drink.strMeasure4 && `${drink.strMeasure4} ${drink.strIngredient4}`}</h3>
-          <h3 className="drink-names">{drink.strMeasure5 && `${drink.strMeasure5} ${drink.strIngredient5}`}</h3>
-          <h3 className="drink-names">{drink.strMeasure6 && `${drink.strMeasure6} ${drink.strIngredient6}`}</h3>
-          <h4 className="drink-instructions">{drink.strInstructions}</h4>
+          <h5 className="drink-names">{drink.strMeasure1 && `${drink.strMeasure1} ${drink.strIngredient1}`}</h5>
+          <h5 className="drink-names">{drink.strMeasure2 && `${drink.strMeasure2} ${drink.strIngredient2}`}</h5>
+          <h5 className="drink-names">{drink.strMeasure3 && `${drink.strMeasure3} ${drink.strIngredient3}`}</h5>
+          <h5 className="drink-names">{drink.strMeasure4 && `${drink.strMeasure4} ${drink.strIngredient4}`}</h5>
+          <h5 className="drink-names">{drink.strMeasure5 && `${drink.strMeasure5} ${drink.strIngredient5}`}</h5>
+          <h5 className="drink-names">{drink.strMeasure6 && `${drink.strMeasure6} ${drink.strIngredient6}`}</h5>
+          <h6 className="drink-instructions">{drink.strInstructions}</h6>
           </div>
      
       <hr />
