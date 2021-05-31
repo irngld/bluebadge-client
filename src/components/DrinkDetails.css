@@ -20,7 +20,7 @@
   border: 2px solid transparent;
 }
 
-.card-title {
+.mainDetailCard .card-title {
   color: rgb(136, 87, 87);
   font-family: monospaces;
   font-display: block;
