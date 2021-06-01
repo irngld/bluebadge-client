@@ -35,6 +35,11 @@ const RandomDrink = () => {
       .then (() => setToggle(!toggle)) 
   };
 
+
+  const handleToggle = () => {
+    setToggle(false)
+  }
+
  return ( 
    <>
    {!toggle ? 
@@ -64,7 +69,7 @@ const RandomDrink = () => {
       {drink == null ? (
         <h5 className="mainrandoms">LOADING A SURPRISE</h5>
         ) :
-       <DrinkDetails drink={drink}/>}
+       <DrinkDetails drink={drink} onSelect={handleToggle}  />}
       
     </>
   
