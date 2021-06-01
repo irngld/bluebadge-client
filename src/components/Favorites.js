@@ -5,7 +5,10 @@ import Details from "./Details";
 import background from "../img/searchDrinksBackground.jpg";
 
 const Favorites = (props) => {
+  const [results, setResults] = useState();
+
   let getFavDrinks = "http://localhost:5000/favorites/show";
+
   const token = localStorage.getItem("token");
 
   const fetcher = () => {
@@ -40,6 +43,7 @@ const Favorites = (props) => {
   };
 
   const itemUpdated = () => {
+    // Allows page to update when favorite removed
     fetcher();
   };
 
