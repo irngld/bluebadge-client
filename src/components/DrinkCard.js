@@ -19,7 +19,7 @@ const DrinkCard = ({ drink, onSelect, onUpdate }) => {
   return (
 
     <div className="px-3 py-3">
-      <Card className="text-dark d-flex text-left bg-light" style={{ height: "auto", width: "400px" }}>
+      <Card className="drinkCard text-dark d-flex text-left bg-light" style={{ height: "auto", width: "400px" }}>
         <Card.Img src={drink.strDrinkThumb} alt="Card image" className="card-image p-2" onClick={() => onSelect(drink.idDrink)}></Card.Img>
 
         <Card.Title className='mt-4'>{drink.strDrink}</Card.Title>
