@@ -22,7 +22,7 @@ const data = drink;
 
 
           <Container className="drinking">
-          <CardImg className="drink-thumb" src={drink.strDrinkThumb} style={{height: "250px"}} onClick={ () => onSelect(drink.idDrink)} />
+          <CardImg className="drink-thumb" src={drink.strDrinkThumb}  onClick={ () => onSelect(drink.idDrink)} />
 
 
 <CardTitle>

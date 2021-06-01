@@ -18,7 +18,7 @@ text-transform: uppercase;
 box-shadow: 0px 2px 2px #d3c4bd ;
 transition: ease background-color 250ms;
 &:hover {
-  background-color: #94bbe9;
+  background-color: #e9bf94;
 }
 `
 
