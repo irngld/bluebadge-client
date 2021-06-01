@@ -193,7 +193,7 @@
   position:relative;  
 } */
 
-.heart:hover:after {
+.drinkCard .heart:hover:after {
   content: "Add to Favorites";
   color: white;
   display: block;

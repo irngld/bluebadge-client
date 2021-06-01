@@ -21,7 +21,7 @@ const DrinkCard = ({ drink, onSelect, onUpdate }) => {
       {/* <Link to={`/details/${drink.idDrink}`}> */}
       {/* <p key={drink.idDrink}>{drink.strDrink}</p> */}
       <Card
-        className='text-dark d-flex text-left bg-light'
+        className='drinkCard text-dark d-flex text-left bg-light'
         style={{ height: "auto", width: "400px" }}
       >
         <Card.Img
