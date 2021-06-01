@@ -5,6 +5,8 @@ import Details from "./Details";
 import background from "../img/searchDrinksBackground.jpg";
 
 const Favorites = (props) => {
+  const [currentDrinkId, setCurrentDrinkId] = useState();
+  const [showDetails, setShowDetails] = useState(false);
   const [results, setResults] = useState();
 
   let getFavDrinks = "http://localhost:5000/favorites/show";
@@ -51,25 +53,41 @@ const Favorites = (props) => {
     fetcher();
   }, []);
 
+  const handleDrinkSelect = (id) => {
+    setCurrentDrinkId(id);
+    setShowDetails(true);
+  };
+
+  const handleBack = (id) => {
+    setCurrentDrinkId(null);
+    setShowDetails(false);
+  };
+
   return (
     <div>
-      <p>FAVORITES HERE</p>
-      <Container className="d-flex flex-wrap">
+      { !showDetails ?
+     ( <>
+     <h2 className="search-title justify-content-center">My Favorites</h2>
+      <Container className="d-flex flex-wrap pt-5 pb-3 mb-5">
         {results == null ? (
-          <p>No Favorites Found</p>
+          <p className>No Favorites Found</p>
         ) : (
           results.map((obj, index) => {
             return (
               <DrinkCard
                 drink={obj}
-                key={obj}
-                // onSelect={}
-                onUpdate={itemUpdated}
+                key={obj.id}
+                key={obj.idDrink}
+                      onSelect={handleDrinkSelect}
               />
             );
           })
         )}
       </Container>
+      </>
+     ): (
+      <Details drinkId={currentDrinkId} onBack={handleBack} />
+    )}
     </div>
   );
 };

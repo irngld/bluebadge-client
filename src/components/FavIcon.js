@@ -61,7 +61,7 @@ const FavIcon = ({ drink, onUpdate, newRating }) => {
   };
 
   return (
-    <div className="">
+    <div className="heart">
       <Heart className="heart" isClick={isClick} onClick={() => selFavorite(drink)} />
     </div>
   );
