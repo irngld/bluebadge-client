@@ -8,10 +8,10 @@ const Favorites = (props) => {
   const [currentDrinkId, setCurrentDrinkId] = useState();
   const [showDetails, setShowDetails] = useState(false);
   const [results, setResults] = useState();
-  
-  let getFavDrinks = 'http://localhost:5000/favorites/show';
-  const token = localStorage.getItem('token');
 
+  let getFavDrinks = "http://localhost:5000/favorites/show";
+
+  const token = localStorage.getItem("token");
 
   const fetcher = () => {
     fetch(getFavDrinks, {
@@ -45,6 +45,7 @@ const Favorites = (props) => {
   };
 
   const itemUpdated = () => {
+    // Allows page to update when favorite removed
     fetcher();
   };
 

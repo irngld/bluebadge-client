@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import DrinkCard from "./DrinkCard";
 import Heart from "react-animated-heart";
 
-const FavIcon = ({ drink, onUpdate }) => {
+const FavIcon = ({ drink, onUpdate, newRating }) => {
   let isFavorite = drink?.isFavorite ?? false == true;
   const [isClick, setClick] = useState(isFavorite);
   const handleUpdate = () => {
@@ -17,6 +17,7 @@ const FavIcon = ({ drink, onUpdate }) => {
     console.log(isClick, drink);
 
     if (!initialState) {
+      console.log(`Adding favorite: ${newRating}`);
       fetch("http://localhost:5000/favorites/add", {
         method: "POST",
         headers: new Headers({
@@ -28,7 +29,7 @@ const FavIcon = ({ drink, onUpdate }) => {
           drinkId: Number(drink.idDrink),
           drinkName: drink.strDrink,
           drinkThumb: drink.strDrinkThumb,
-          rating: 4,
+          // rating: 4,
         }),
       })
         .then((res) => res.json())
