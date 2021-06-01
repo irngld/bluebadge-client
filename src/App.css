@@ -62,11 +62,9 @@
 }
 
 .drink-image {
-
 }
 
 .icons {
-
 }
 .icons:hover {
   transform: scale(1.2);
@@ -105,7 +103,7 @@
   height: 50vh;
 }
 
-.home-text h2{
+.home-text h2 {
   margin-top: 70px;
   font-family: "Frijole", cursive;
 }
@@ -123,7 +121,7 @@
   height: 180px;
 }
 
-.drink-fact{
+.drink-fact {
   margin-top: 140px;
   margin-bottom: 40px;
   text-align: left;
@@ -175,8 +173,7 @@
   min-width: 100vw;
   min-height: 100vh;
   background-size: cover;
-  background-position-x: center ;
- 
+  background-position-x: center;
 }
 .footer {
   background-color: black;
@@ -193,7 +190,7 @@
   position:relative;  
 } */
 
-.heart:hover:after {
+.drinkCard .heart:hover:after {
   content: "Add to Favorites";
   color: white;
   display: block;
@@ -202,14 +199,13 @@
   right: 10px;
   width: auto;
   padding: 5px;
-  background:#faa51a;
+  background: #faa51a;
   z-index: 100;
-} 
+}
 
 .footer p {
   padding-top: 10px;
 }
-
 
 /* .footer {
   position: absolute;
