@@ -66,10 +66,10 @@ const Favorites = (props) => {
     <div>
       { !showDetails ?
      ( <>
-     <h2 className="search-title">My Favorites</h2>
-      <Container className="d-flex flex-wrap pt-5 pb-3">
+     <h2 className="search-title justify-content-center">My Favorites</h2>
+      <Container className="d-flex flex-wrap pt-5 pb-3 mb-5">
         {results == null ? (
-          <p>No Favorites Found</p>
+          <p className>No Favorites Found</p>
         ) : (
           results.map((obj, index) => {
             return (
