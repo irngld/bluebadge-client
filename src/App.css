@@ -145,7 +145,7 @@
   text-align: left;
 }
 
-.search-drinks {
+.search-drinks-background {
   height: 97vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -188,9 +188,28 @@
   justify-content: center;
 }
 
+/* .heart{
+  display:inline;
+  position:relative;  
+} */
+
+.heart:hover:after {
+  content: "Add to Favorites";
+  color: white;
+  display: block;
+  position: absolute;
+  top: 480px;
+  right: 10px;
+  width: auto;
+  padding: 5px;
+  background:#faa51a;
+  z-index: 100;
+} 
+
 .footer p {
   padding-top: 10px;
 }
+
 
 /* .footer {
   position: absolute;

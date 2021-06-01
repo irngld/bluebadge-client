@@ -70,9 +70,8 @@ const SearchDrinks = (props) => {
       {!showDetails ? (
         showSearch ? (
           <div
-            className='search-drinks'
-            style={{ backgroundImage: `url(${background})` }}
-          >
+            className='search-drinks-background'
+            style={{ backgroundImage: `url(${background})`}}>
             <h2 className="search-title">Search By Drink Name or Ingredient</h2>
             <div className='w-100 d-flex align-items-center justify-content-center'>
               <SearchBar

@@ -4,24 +4,44 @@ import DrinkDetails from "./DrinkDetails";
 import FavIcon from "./FavIcon";
 import RatingStars from "./RatingStars";
 
-import { Container, Row, Col, Card, Image, Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Image,
+  Button,
+  Tooltip,
+  OverlayTrigger,
+} from "react-bootstrap";
 
 const DrinkCard = ({ drink, onSelect, onUpdate }) => {
   return (
-    <div className="px-3 py-3">
+    <div className='px-3 py-3'>
       {/* <Link to={`/details/${drink.idDrink}`}> */}
       {/* <p key={drink.idDrink}>{drink.strDrink}</p> */}
-      <Card className="text-dark d-flex text-left bg-light" style={{ height: "auto", width: "400px" }}>
-        <Card.Img src={drink.strDrinkThumb} alt="Card image" className="card-image p-2" onClick={() => onSelect(drink.idDrink)}></Card.Img>
+      <Card
+        className='text-dark d-flex text-left bg-light'
+        style={{ height: "auto", width: "400px" }}
+      >
+        <Card.Img
+          src={drink.strDrinkThumb}
+          alt='Card image'
+          className='card-image p-2'
+          onClick={() => onSelect(drink.idDrink)}
+        ></Card.Img>
 
-        <Card.Title className="mt-4">{drink.strDrink}</Card.Title>
+        <Card.Title className='mt-4'>{drink.strDrink}</Card.Title>
         <hr />
-        <div className="d-flex justify-content-between align-items-top bg-light">
-          <div className="pt-3 ps-4">
-            <RatingStars className="stars" />
+        <div className='d-flex justify-content-between align-items-top bg-light'>
+          <div className='pt-3 ps-4'>
+            <RatingStars className='stars' />
           </div>
-          <div className="">
-            <FavIcon className="heart" drink={drink} onUpdate={onUpdate} />
+
+          <div className=''>
+
+              <FavIcon className='heart' drink={drink} onUpdate={onUpdate} />
+
           </div>
         </div>
       </Card>
