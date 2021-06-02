@@ -4,39 +4,6 @@
   text-align: center;
 }
 
-/* .navbar {
-  background-color: tan;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-}
-
-.navbar h4 {
-  cursor: pointer;
-}
-
-.navbar ul {
-  list-style-type: none;
-  display: flex;
-  margin: 0px;
-}
-
-.navbar ul > li {
-  padding: 20px 30px;
-}
-
-.navbar li > a {
-  padding: 20px 0;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-}
-
-.navbar li > a:hover {
-  background-color: gold;
-} 
-*/
-
 .menu-item > a {
   display: flex;
   flex-direction: column;
@@ -178,17 +145,11 @@
 .footer {
   background-color: black;
   color: white;
-
   /* bottom: 0; */
   display: flex;
   width: 100%;
   justify-content: center;
 }
-
-/* .heart{
-  display:inline;
-  position:relative;  
-} */
 
 .drinkCard .heart:hover:after {
   content: "Add to Favorites";
@@ -206,38 +167,3 @@
 .footer p {
   padding-top: 10px;
 }
-
-/* .footer {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  background-color: black;
-  padding: 0 20px;
-}
-
-.footer h4 {
-  cursor: pointer;
-}
-
-.footer ul {
-  list-style-type: none;
-  display: flex;
-  margin: 0px;
-}
-
-.footer ul > li {
-  padding: 20px 30px;
-}
-
-.footer li > a {
-  padding: 20px 0; /* 30px */
-/* cursor: pointer;
-  text-decoration: none;
-  color: white;
-}
-
-.footer li > a:hover {
-  background-color: lightgrey;
-} */
