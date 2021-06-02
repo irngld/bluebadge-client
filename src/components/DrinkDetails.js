@@ -8,7 +8,7 @@ import FavIcon from "./FavIcon";
 import RatingStars from "./RatingStars";
 
 
-const DrinkDetails = ({drink, onSelect, onUpdate, buttonTitle="Search Again" }) => {
+const DrinkDetails = ({drink, onSelect, onUpdate, buttonTitle="Search Again", showButton=(false) }) => {
 const [open, setOpen] = useState(false);
 const data = drink;
   const [showSearch, setShowSearch] = useState(true);
@@ -50,15 +50,15 @@ const data = drink;
         </div>
       </Container>
       </Card>
-      <Button
-              className='search-again-button'
+      {showButton && <Button 
+              className='goback'
               type='button'
               onClick={() => onSelect()}
               size='lg'
               style={{ color: "white", background: "#faa51a", border: "white" }}
             >
               {buttonTitle}
-            </Button>
+            </Button>}
   
           </div>
           </div>

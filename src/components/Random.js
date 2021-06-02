@@ -69,7 +69,7 @@ const RandomDrink = () => {
       {drink == null ? (
         <h5 className="mainrandoms">LOADING A SURPRISE</h5>
         ) :
-       <DrinkDetails drink={drink} onSelect={handleToggle}  />}
+       <DrinkDetails drink={drink} onSelect={handleToggle}  showButton={true} />}
       
     </>
   

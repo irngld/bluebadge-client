@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import DrinkCard from "./DrinkCard";
 import Details from "./Details";
+import DrinkDetails from "./DrinkDetails";
 import background from "../img/searchDrinksBackground.jpg";
 
 const Favorites = (props) => {
@@ -86,7 +87,7 @@ const Favorites = (props) => {
       </Container>
       </>
      ): (
-      <Details drinkId={currentDrinkId} onBack={handleBack} />
+      <Details drinkId={currentDrinkId} onBack={handleBack} buttonTitle="Back to Favorites" />
     )}
     </div>
   );
