@@ -91,7 +91,9 @@ const Auth = () => {
             </div>
 
             <div className="form-group mt-2">
-              <label className="my-2">Password</label>
+              <label className="my-2">
+                Password <span style={{ fontSize: "12px" }}>(uppercase, lowercase and number or special character)</span>
+              </label>
               <input
                 type="password"
                 className="form-control"
