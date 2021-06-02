@@ -6,8 +6,9 @@ import tallDrink from "../img/drinkIcon.svg";
 import tropical from "../img/tropicalIcon.svg";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = (props) => {
   const [drinkFact, setDrinkFact] = useState();
+  console.log("props", props);
 
   useEffect(() => {
     fetch(`http://localhost:5000/drink/drinkfact`)
@@ -18,62 +19,51 @@ const Home = () => {
     <div>
       <HamburgerMenu />
 
-      <Row className='home-top'>
-        <div className='home-text'>
+      <Row className="home-top">
+        <div className="home-text">
           <h2>Welcome! </h2>
           <br />
           <h5>Let's find your perfect cocktail! Choose an option below.</h5>
         </div>
-        <Container className='d-flex'>
-        <Col className='icons'>
-          <Link to='/searchdrinks' className='drink-link'>
-            <img
-              src={margarita}
-              alt='margarita image'
-              className='drink-image'
-              style={{ maxWidth: "22rem" }}
-            />
-            <h5 className='text-link mt-3' style={{ color: "black" }}>
-              SEARCH DRINK RECIPES
-            </h5>
-          </Link>
-        </Col>
+        <Container className="d-flex">
+          <Col className="icons">
+            <Link to="/searchdrinks" className="drink-link">
+              <img src={margarita} alt="margarita image" className="drink-image" style={{ maxWidth: "22rem" }} />
+              <h5 className="text-link mt-3" style={{ color: "black" }}>
+                SEARCH DRINK RECIPES
+              </h5>
+            </Link>
+          </Col>
 
-        <Col className='icons'>
-          <Link to='/random' className='drink-link'>
-            <img src={tallDrink} alt='drink image' className='drink-image' />
-            <h5 className='text-link mt-3' style={{ color: "black" }}>
-              FEELING LUCKY? TRY A RANDOM DRINK RECIPE
-            </h5>
-          </Link>
-        </Col>
+          <Col className="icons">
+            <Link to="/random" className="drink-link">
+              <img src={tallDrink} alt="drink image" className="drink-image" />
+              <h5 className="text-link mt-3" style={{ color: "black" }}>
+                FEELING LUCKY? TRY A RANDOM DRINK RECIPE
+              </h5>
+            </Link>
+          </Col>
 
-        <Col className='icons'>
-          <Link to='/favorites' className='drink-link'>
-            <img
-              src={tropical}
-              alt='tropical drink image'
-              className='drink-image'
-            />
-            <h5 className='text-link mt-3' style={{ color: "black" }}>
-              GO TO YOUR FAVORITES
-            </h5>
-          </Link>
-        </Col>
+          <Col className="icons">
+            <Link to="/favorites" className="drink-link">
+              <img src={tropical} alt="tropical drink image" className="drink-image" />
+              <h5 className="text-link mt-3" style={{ color: "black" }}>
+                GO TO YOUR FAVORITES
+              </h5>
+            </Link>
+          </Col>
         </Container>
       </Row>
 
-      <Row className='home-bottom' style={{}}>
-        <Container className='w-75 align-content-center'>
-          <Card className='drink-fact'>
-            <h3 className='p-3'>The More You Know (about your cocktail ingredients)</h3>
-            <Card.Body className=''>
+      <Row className="home-bottom" style={{}}>
+        <Container className="w-75 align-content-center">
+          <Card className="drink-fact">
+            <h3 className="p-3">The More You Know (about your cocktail ingredients)</h3>
+            <Card.Body className="">
               <Card.Title>{drinkFact?.strIngredient}</Card.Title>
-              <Card.Text classname='text-left p-3'>
-                {drinkFact?.strDescription}
-              </Card.Text>
+              <Card.Text className="text-left p-3">{drinkFact?.strDescription}</Card.Text>
             </Card.Body>
-            <Card.Footer className='text-muted'>Happy Mixing!</Card.Footer>
+            <Card.Footer className="text-muted">Happy Mixing!</Card.Footer>
           </Card>
         </Container>
       </Row>

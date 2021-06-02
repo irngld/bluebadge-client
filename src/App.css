@@ -71,8 +71,9 @@
 }
 
 .home-text h2 {
-  margin-top: 70px;
+  margin-top: 50px;
   font-family: "Frijole", cursive;
+  font-size: 60px;
 }
 
 .icons {
@@ -137,7 +138,7 @@
 }
 
 .results-background {
-  min-width: 100vw;
+  /* min-width: 100vw; */
   min-height: 100vh;
   background-size: cover;
   background-position-x: center;
@@ -146,7 +147,6 @@
 .goback {
   margin-top: 40px;
   margin-bottom: 80px;
-
 }
 
 .footer {
