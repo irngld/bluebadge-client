@@ -66,7 +66,7 @@ const RandomDrink = () => {
           </div>
         </>
       ) : (
-        <>{drink == null ? <h5 className="mainrandoms">LOADING A SURPRISE</h5> : <DrinkDetails drink={drink} />}</>
+        <>{drink == null ? <h5 className="mainrandoms">LOADING A SURPRISE</h5> : <DrinkDetails drink={drink} onSelect={handleToggle}  showButton={true} />}</>
       )}
 
     </>

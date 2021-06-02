@@ -7,7 +7,8 @@ import styled from "styled-components";
 import FavIcon from "./FavIcon";
 import RatingStars from "./RatingStars";
 
-const DrinkDetails = ({drink, onSelect, onUpdate, buttonTitle="Search Again" }) => {
+const DrinkDetails = ({drink, onSelect, onUpdate, buttonTitle="Search Again", showButton=(false) }) => {
+
 const [open, setOpen] = useState(false);
 const data = drink;
 const [showSearch, setShowSearch] = useState(true);
@@ -60,9 +61,9 @@ const [showSearch, setShowSearch] = useState(true);
         </div>
       </Container>
       </Card>
-      <Button
+      {showButton && <Button 
+              className='goback'
 
-              className='search-again-button'
               type='button'
               onClick={() => onSelect()}
               size='lg'
@@ -70,7 +71,7 @@ const [showSearch, setShowSearch] = useState(true);
             >
 
               {buttonTitle}
-            </Button>
+            </Button>}
   
           </div>
           </div>

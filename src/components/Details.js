@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DrinkDetails from "./DrinkDetails";
 
-const DetailsPage = ({ drinkId, onBack }) => {
+const DetailsPage = ({
+  drinkId,
+  onBack,
+  buttonTitle = "Return to Search Results",
+}) => {
   const [drink, setDrink] = useState();
 
   const fetcher = () => {
@@ -19,10 +23,16 @@ const DetailsPage = ({ drinkId, onBack }) => {
 
   return (
     <div>
-      {drink == null ? <p>No drink found</p> : <DrinkDetails drink={drink} />}
-      <button type="button" onClick={onBack}>
-        Return to Search Results
-      </button>
+      {drink == null ? (
+        <p>No drink found</p>
+      ) : (
+        <DrinkDetails
+          drink={drink}
+          onSelect={onBack}
+          buttonTitle={buttonTitle}
+          showButton={true}
+        />
+      )}
     </div>
   );
 };
