@@ -1,23 +1,34 @@
-import React from 'react';
-import {useState} from 'react';
+import React from "react";
+import { useState } from "react";
 import background from "../img/fence.jpg";
-import '../components/DrinkDetails.css';
-import { Container, Button, Collapse, Card, CardImg, CardTitle, CardBody, Fade, CardLink,CardSubtitle, Row} from 'reactstrap';
-import styled from 'styled-components';
+import "../components/DrinkDetails.css";
+import { Container, Button, Collapse, Card, CardImg, CardTitle, CardBody, Fade, CardLink, CardSubtitle, Row } from "reactstrap";
+import styled from "styled-components";
 import FavIcon from "./FavIcon";
 import RatingStars from "./RatingStars";
 
-
 const DrinkDetails = ({drink, onSelect, onUpdate, buttonTitle="Search Again", showButton=(false) }) => {
+
 const [open, setOpen] = useState(false);
 const data = drink;
-  const [showSearch, setShowSearch] = useState(true);
-    return (
-        <>
-        <div className="mainDetails">
-          <div className="mainDetailCard" style={{backgroundImage: `url(${background})`, width:'100vw', margin: 0, height:'100vh',backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
-         
+const [showSearch, setShowSearch] = useState(true);
+
+  return (
+    <>
+      <div className="mainDetails">
+        <div
+          className="mainDetailCard"
+          style={{
+            backgroundImage: `url(${background})`,
+            width: "100vw",
+            margin: 0,
+            height: "100vh",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
           <Card className="drink-labels" style={{ height: "auto", width: "400px" }}>
+
 
 
 
@@ -52,11 +63,13 @@ const data = drink;
       </Card>
       {showButton && <Button 
               className='goback'
+
               type='button'
               onClick={() => onSelect()}
               size='lg'
               style={{ color: "white", background: "#faa51a", border: "white" }}
             >
+
               {buttonTitle}
             </Button>}
   
@@ -67,5 +80,6 @@ const data = drink;
         </>
       )
 }
+
 
 export default DrinkDetails;
