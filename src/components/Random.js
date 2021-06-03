@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import DrinkDetails from "./DrinkDetails";
 import "../components/Random.css";
-import background from "../img/woodbackground.jpg";
+import background from "../img/glass.jpg";
 import styled from "styled-components";
 
 const Button = styled.button`
