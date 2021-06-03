@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HamburgerMenu from "./HamburgerMenu";
+import { getUser } from "./Auth/UserToken";
 import { Container, Button, Row, Col, Card } from "react-bootstrap";
 import margarita from "../img/margaritaIcon.svg";
 import tallDrink from "../img/drinkIcon.svg";
@@ -21,7 +22,7 @@ const Home = (props) => {
 
       <Row className="home-top">
         <div className="home-text">
-          <h2>Welcome! </h2>
+          <h2>Welcome, {JSON.parse(localStorage.getItem("user")).firstName}!</h2>
           <br />
           <h5>Let's find your perfect cocktail! Choose an option below.</h5>
         </div>
