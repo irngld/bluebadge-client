@@ -6,7 +6,7 @@ class RatingStars extends React.Component {
 
     this.state = {
       stars: [],
-      rating: 0,
+      rating: this.props.drink?.rating ?? 0,
       hovered: 0,
       selectedIcon: "★",
       deselectedIcon: "☆", // color: #808080  (grey)

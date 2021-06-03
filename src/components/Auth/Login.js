@@ -1,6 +1,6 @@
 import { Redirect, useHistory } from "react-router-dom";
 import { useState } from "react";
-import { updateToken } from "./UserToken";
+import { updateToken, setUser } from "./UserToken";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,9 +23,8 @@ const Login = () => {
       .then((res) => res.json())
       .then((json) => {
         updateToken(json.token);
-        // console.log(json);
-        history.push({ pathname: "/home", state: "Iain" });
-        // <Redirect to="/home" props={json} />;
+        setUser(json.user);
+        history.push("/home");
       })
       .catch((err) => {
         console.log(err);
