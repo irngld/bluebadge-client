@@ -1,38 +1,176 @@
 .App {
+  position: relative;
+  min-height: 96vh;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu-item > a {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  list-style-type: none;
+  text-align: left;
+  color: #faf9f6;
+  font-size: 25px;
+  text-decoration: none;
+  margin: 25px 0;
+}
+
+.menu-item > a:hover {
+  background-color: darkgray;
+  color: black;
+}
+
+.menu-item {
+  text-decoration: none;
+}
+
+.drink-link {
+  text-decoration: none;
+}
+
+.drink-image {
+}
+
+.icons {
+}
+.icons:hover {
+  transform: scale(1.2);
+  transition-duration: 0.6s;
+}
+
+.welcomeText {
+  min-height: 100vh;
+}
+
+.rooster-container {
+  margin-top: 60px;
+}
+.rooster {
+  height: 200px;
+}
+
+.title {
+  font-family: "Frijole", cursive;
+}
+
+.key-features {
+  font-family: "Frijole", cursive;
+  padding-top: 70px;
+}
+
+.drink-container {
+  margin-top: 50px;
+}
+.drink-container h5 {
+  margin-top: 20px;
+}
+
+.home-top {
+  background-color: white;
+  height: 50vh;
+}
+
+.home-text h2 {
+  margin-top: 50px;
+  font-family: "Frijole", cursive;
+  font-size: 60px;
+}
+
+.icons {
+  margin-top: ;
+}
+
+.home-bottom {
+  background-color: black;
+  min-height: 48vh;
+}
+
+.drink-image {
+  height: 180px;
+}
+
+.drink-fact {
+  margin-top: 140px;
+  margin-bottom: 40px;
+  text-align: left;
+  padding: 10px;
+}
+
+.card-image {
+  cursor: pointer;
+}
+
+.reg-background {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.reg-form {
+  text-align: left;
+}
+
+.search-drinks-background {
+  height: 97vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.search-title {
+  padding-top: 50px;
+}
+
+.search-bar {
+  margin-top: 40px;
+  height: 50px;
+  font-size: 1.25rem !important;
+}
+
+#oc-react-searchbar-button {
+  margin-top: 45px;
+}
+
+.search-again-button {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.results-background {
+  /* min-width: 100vw; */
+  min-height: 100vh;
+  background-size: cover;
+  background-position-x: center;
+}
+
+.goback {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.footer {
+  background-color: black;
   color: white;
+  /* bottom: 0; */
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.drinkCard .heart:hover:after {
+  content: "Add to Favorites";
+  color: white;
+  display: block;
+  position: absolute;
+  top: 480px;
+  right: 10px;
+  width: auto;
+  padding: 5px;
+  background: #faa51a;
+  z-index: 100;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer p {
+  padding-top: 10px;
 }

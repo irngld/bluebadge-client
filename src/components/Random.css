@@ -1,0 +1,14 @@
+.mainRandom {
+  font-display: block;
+  /* font-family: monospaces; */
+  font-family: "Frijole", cursive;
+  font-weight: 500;
+  font-size: 100px;
+  letter-spacing: 30px;
+  text-shadow: brown 3px;
+}
+
+.mainrandoms {
+  /* font-family: monospaces; */
+  letter-spacing: 10px;
+}
