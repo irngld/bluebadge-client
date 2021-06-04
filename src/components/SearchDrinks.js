@@ -13,10 +13,11 @@ const SearchDrinks = (props) => {
   const data = props;
   const [showDetails, setShowDetails] = useState(false);
   const [showSearch, setShowSearch] = useState(true);
-  const [currentSearch, setCurrentSearch] = useState('');
+  const [currentSearch, setCurrentSearch] = useState("");
 
   const fetcher = (drink) => {
-    setCurrentSearch(drink)
+    setCurrentSearch(drink);
+    const token = localStorage.getItem("token");
     let defaultAPI = `http://localhost:5000/drink/type`;
 
     if (ingredients?.includes(drink) == false) {
@@ -27,6 +28,7 @@ const SearchDrinks = (props) => {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json",
+        Authorization: token,
       }),
       body: JSON.stringify({ drink }), // e.g. vodka
     })
@@ -45,9 +47,7 @@ const SearchDrinks = (props) => {
     fetch(`http://localhost:5000/drink/ingredients`)
       .then((res) => res.json()) // JSON data parsed by `data.json()` call
       .then((obj) => {
-        let ingredients = obj.drinks.map(
-          (ingredient) => ingredient.strIngredient1
-        );
+        let ingredients = obj.drinks.map((ingredient) => ingredient.strIngredient1);
         setIngredients(ingredients);
       })
       .catch((error) => {
@@ -69,14 +69,12 @@ const SearchDrinks = (props) => {
     <>
       {!showDetails ? (
         showSearch ? (
-          <div
-            className='search-drinks-background'
-            style={{ backgroundImage: `url(${background})`}}>
+          <div className="search-drinks-background" style={{ backgroundImage: `url(${background})` }}>
             <h2 className="search-title">Search By Drink Name or Ingredient</h2>
-            <div className='w-100 d-flex align-items-center justify-content-center'>
+            <div className="w-100 d-flex align-items-center justify-content-center">
               <SearchBar
-                className=' w-50'
-                inputClassName='search-bar'
+                className=" w-50"
+                inputClassName="search-bar"
                 onSearch={fetcher}
                 translations={{
                   searchPlaceHolder: "Enter drink name or ingredient",
@@ -85,34 +83,27 @@ const SearchDrinks = (props) => {
             </div>
           </div>
         ) : (
-          <div
-            className='results-background'
-            style={{ backgroundImage: `url(${wood})` }}
-          >
-              <Container className='d-flex ps-4'>
-              <h4 className='search-title pt-5 pb-3' style={{ color: 'white'}}>Showing search results for: <span>{currentSearch}</span> </h4>
-              </Container>
-                
-            <Container className='d-flex flex-wrap'>
+          <div className="results-background" style={{ backgroundImage: `url(${wood})` }}>
+            <Container className="d-flex ps-4">
+              <h4 className="search-title pt-5 pb-3" style={{ color: "white" }}>
+                Showing search results for: <span>{currentSearch}</span>{" "}
+              </h4>
+            </Container>
+
+            <Container className="d-flex flex-wrap">
               {results == null ? (
                 <p>No Drinks Found</p>
               ) : (
                 results.map((obj, index) => {
-                  return (
-                    <DrinkCard
-                      drink={obj}
-                      key={obj.idDrink}
-                      onSelect={handleDrinkSelect}
-                    />
-                  );
+                  return <DrinkCard drink={obj} key={obj.idDrink} onSelect={handleDrinkSelect} />;
                 })
               )}
             </Container>
             <Button
-              className='search-again-button'
-              type='button'
+              className="search-again-button"
+              type="button"
               onClick={() => setShowSearch(true)}
-              size='lg'
+              size="lg"
               style={{ color: "white", background: "#faa51a", border: "white" }}
             >
               Search Again
