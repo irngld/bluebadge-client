@@ -12,7 +12,15 @@ const Home = (props) => {
   console.log("props", props);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/drink/drinkfact`)
+    const token = localStorage.getItem("token");
+    fetch(`http://localhost:5000/drink/drinkfact`, {
+      method: "GET",
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: token,
+      }),
+    })
       .then((res) => res.json()) // JSON data parsed by `data.json()` call
       .then((obj) => setDrinkFact(obj));
   }, []);

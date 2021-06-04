@@ -2,39 +2,21 @@ import React from "react";
 import { useState } from "react";
 import background from "../img/fence.jpg";
 import "../components/DrinkDetails.css";
-import {
-  Container,
-  Button,
-  Collapse,
-  Card,
-  CardImg,
-  CardTitle,
-  CardBody,
-  Fade,
-  CardLink,
-  CardSubtitle,
-  Row,
-} from "reactstrap";
+import { Container, Button, Collapse, Card, CardImg, CardTitle, CardBody, Fade, CardLink, CardSubtitle, Row } from "reactstrap";
 import styled from "styled-components";
 import FavIcon from "./FavIcon";
 import RatingStars from "./RatingStars";
 
-const DrinkDetails = ({
-  drink,
-  onSelect,
-  onUpdate,
-  buttonTitle = "Search Again",
-  showButton = false,
-}) => {
+const DrinkDetails = ({ drink, onSelect, onUpdate, buttonTitle = "Search Again", showButton = false }) => {
   const [open, setOpen] = useState(false);
   const data = drink;
   const [showSearch, setShowSearch] = useState(true);
 
   return (
     <>
-      <div className='mainDetails'>
+      <div className="mainDetails">
         <div
-          className='mainDetailCard '
+          className="mainDetailCard "
           style={{
             backgroundImage: `url(${background})`,
             width: "100vw",
@@ -45,79 +27,49 @@ const DrinkDetails = ({
           }}
         >
           <div>
-          <Card
-            className='drink-labels'
-            style={{ height: "auto", width: "400px" }}
-          >
-            <Container className='drinking'>
-              <CardImg className='drink-thumb' src={drink.strDrinkThumb} />
+            <Card className="drink-labels" style={{ height: "auto", width: "400px" }}>
+              <Container className="drinking">
+                <CardImg className="drink-thumb" src={drink.strDrinkThumb} />
 
-              <CardTitle>
-                <h3 className='card-title'>{drink.strDrink}</h3>
-              </CardTitle>
+                <CardTitle>
+                  <h3 className="card-title">{drink.strDrink}</h3>
+                </CardTitle>
 
-              <div id='drink-description'>
-                <h5 className='drink-names'>
-                  {drink.strMeasure1 &&
-                    `${drink.strMeasure1} ${drink.strIngredient1}`}
-                </h5>
-                <h5 className='drink-names'>
-                  {drink.strMeasure2 &&
-                    `${drink.strMeasure2} ${drink.strIngredient2}`}
-                </h5>
-                <h5 className='drink-names'>
-                  {drink.strMeasure3 &&
-                    `${drink.strMeasure3} ${drink.strIngredient3}`}
-                </h5>
-                <h5 className='drink-names'>
-                  {drink.strMeasure4 &&
-                    `${drink.strMeasure4} ${drink.strIngredient4}`}
-                </h5>
-                <h5 className='drink-names'>
-                  {drink.strMeasure5 &&
-                    `${drink.strMeasure5} ${drink.strIngredient5}`}
-                </h5>
-                <h5 className='drink-names'>
-                  {drink.strMeasure6 &&
-                    `${drink.strMeasure6} ${drink.strIngredient6}`}
-                </h5>
-                <h6 className='drink-instructions'>{drink.strInstructions}</h6>
-              </div>
-
-              <hr />
-              <div className='d-flex justify-content-between align-items-top bg-light'>
-                <div className='pt-3 ps-4'>
-                  <RatingStars className='stars' />
+                <div id="drink-description">
+                  <h5 className="drink-names">{drink.strMeasure1 && `${drink.strMeasure1} ${drink.strIngredient1}`}</h5>
+                  <h5 className="drink-names">{drink.strMeasure2 && `${drink.strMeasure2} ${drink.strIngredient2}`}</h5>
+                  <h5 className="drink-names">{drink.strMeasure3 && `${drink.strMeasure3} ${drink.strIngredient3}`}</h5>
+                  <h5 className="drink-names">{drink.strMeasure4 && `${drink.strMeasure4} ${drink.strIngredient4}`}</h5>
+                  <h5 className="drink-names">{drink.strMeasure5 && `${drink.strMeasure5} ${drink.strIngredient5}`}</h5>
+                  <h5 className="drink-names">{drink.strMeasure6 && `${drink.strMeasure6} ${drink.strIngredient6}`}</h5>
+                  <h6 className="drink-instructions">{drink.strInstructions}</h6>
                 </div>
-                <div className=''>
-                  <FavIcon
-                    className='heart'
-                    drink={drink}
-                    onUpdate={onUpdate}
-                  />
+
+                <hr />
+                <div className="d-flex justify-content-between align-items-top bg-light">
+                  <div className="pt-3 ps-4">
+                    <RatingStars className="stars" drink={drink} />
+                  </div>
+                  <div className="">
+                    <FavIcon className="heart" drink={drink} onUpdate={onUpdate} />
+                  </div>
                 </div>
-              </div>
-            </Container>
-            
-            
-          </Card>
-          {showButton && (
-            <Button
-              className='goback'
-              type='button'
-              onClick={() => onSelect()}
-              size='lg'
-              style={{ color: "white", background: "#faa51a", border: "white" }}
-            >
-              {buttonTitle}
-            </Button>
-          )}
+              </Container>
+            </Card>
+            {showButton && (
+              <Button
+                className="goback"
+                type="button"
+                onClick={() => onSelect()}
+                size="lg"
+                style={{ color: "white", background: "#faa51a", border: "white" }}
+              >
+                {buttonTitle}
+              </Button>
+            )}
           </div>
-          
-          <div>
-            
-          </div>
-          
+
+          <div></div>
         </div>
       </div>
     </>

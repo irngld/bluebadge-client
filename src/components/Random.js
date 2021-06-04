@@ -26,7 +26,15 @@ const RandomDrink = () => {
   const [toggle, setToggle] = useState(false);
 
   const fetcher = () => {
-    fetch(`http://localhost:5000/drink/random`)
+    const token = localStorage.getItem("token");
+    fetch(`http://localhost:5000/drink/random`, {
+      method: "GET",
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: token,
+      }),
+    })
       .then((res) => res.json()) // JSON data parsed by `data.json()` call
       .then((obj) => setDrink(obj.drinks[0]))
       .then(() => setToggle(!toggle));
