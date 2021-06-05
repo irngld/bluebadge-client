@@ -1,4 +1,5 @@
 import React from "react";
+import APIURL from "../helpers/environment";
 
 class RatingStars extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class RatingStars extends React.Component {
     if (this.props.onChange) this.props.onChange(newRating);
     console.log(newRating, this.props.drink);
 
-    let getDrinkRatings = `http://localhost:5000/favorites/rating/${this.props.drink.idDrink}`;
+    let getDrinkRatings = `${APIURL}/favorites/rating/${this.props.drink.idDrink}`;
     const token = localStorage.getItem("token");
 
     fetch(getDrinkRatings, {

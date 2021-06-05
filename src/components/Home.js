@@ -6,6 +6,7 @@ import margarita from "../img/margaritaIcon.svg";
 import tallDrink from "../img/drinkIcon.svg";
 import tropical from "../img/tropicalIcon.svg";
 import { Link } from "react-router-dom";
+import APIURL from "../helpers/environment";
 
 const Home = (props) => {
   const [drinkFact, setDrinkFact] = useState();
@@ -13,7 +14,7 @@ const Home = (props) => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    fetch(`http://localhost:5000/drink/drinkfact`, {
+    fetch(`${APIURL}/drink/drinkfact`, {
       method: "GET",
       headers: new Headers({
         Accept: "application/json",

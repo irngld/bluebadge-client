@@ -1,6 +1,7 @@
 import { Redirect, useHistory } from "react-router-dom";
 import { useState } from "react";
 import { updateToken, setUser } from "./UserToken";
+import APIURL from "../helpers/environment";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ const Login = () => {
   let authenticate = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:5000/user/login", {
+    fetch(`${APIURL}/user/login`, {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json",
