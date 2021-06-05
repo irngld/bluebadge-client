@@ -5,13 +5,14 @@ import Details from "./Details";
 import DrinkDetails from "./DrinkDetails";
 import background from "../img/searchDrinksBackground.jpg";
 import wood from "../img/wood.jpg";
+import APIURL from "../helpers/environment";
 
 const Favorites = (props) => {
   const [currentDrinkId, setCurrentDrinkId] = useState();
   const [showDetails, setShowDetails] = useState(false);
   const [results, setResults] = useState();
 
-  let getFavDrinks = "http://localhost:5000/favorites/show";
+  let getFavDrinks = `${APIURL}/favorites/show`;
 
   const token = localStorage.getItem("token");
 

@@ -4,6 +4,7 @@ import { verifyPassword } from "../Utils/utilities";
 import { updateToken } from "./UserToken";
 import background from "../../img/welcomeBackground2.jpg";
 import { Container, Form, Button } from "react-bootstrap";
+import APIURL from "../helpers/environment";
 
 const Auth = () => {
   const [firstName, setFirstName] = useState("");
@@ -17,7 +18,7 @@ const Auth = () => {
 
     if (verifyPassword(password)) {
       // verifies password meets criteria (upper, lower & num/spec)
-      fetch("http://localhost:5000/user/register", {
+      fetch(`${APIURL}/user/register`, {
         method: "POST",
         headers: new Headers({
           "Content-Type": "application/json",

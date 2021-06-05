@@ -3,6 +3,7 @@ import DrinkDetails from "./DrinkDetails";
 import "../components/Random.css";
 import background from "../img/glass.jpg";
 import styled from "styled-components";
+import APIURL from "../helpers/environment";
 
 const Button = styled.button`
   background-color: white;
@@ -27,7 +28,7 @@ const RandomDrink = () => {
 
   const fetcher = () => {
     const token = localStorage.getItem("token");
-    fetch(`http://localhost:5000/drink/random`, {
+    fetch(`${APIURL}/drink/random`, {
       method: "GET",
       headers: new Headers({
         Accept: "application/json",

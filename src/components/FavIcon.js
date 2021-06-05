@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import DrinkCard from "./DrinkCard";
 import Heart from "react-animated-heart";
+import APIURL from "../helpers/environment";
 
 const FavIcon = ({ drink, onUpdate, newRating }) => {
   let isFavorite = drink?.isFavorite ?? false == true;
@@ -18,7 +19,7 @@ const FavIcon = ({ drink, onUpdate, newRating }) => {
 
     if (!initialState) {
       console.log(`Adding favorite: ${newRating}`);
-      fetch("http://localhost:5000/favorites/add", {
+      fetch(`${APIURL}/favorites/add`, {
         method: "POST",
         headers: new Headers({
           Accept: "application/json",
@@ -41,7 +42,7 @@ const FavIcon = ({ drink, onUpdate, newRating }) => {
           console.log(err);
         });
     } else {
-      fetch(`http://localhost:5000/favorites/remove/${drink.idDrink}`, {
+      fetch(`${APIURL}/favorites/remove/${drink.idDrink}`, {
         method: "DELETE",
         headers: new Headers({
           Accept: "application/json",
