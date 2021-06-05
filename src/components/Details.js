@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DrinkDetails from "./DrinkDetails";
+import APIURL from "../helpers/environment";
 
 const DetailsPage = ({ drinkId, onBack, buttonTitle = "Return to Search Results" }) => {
   const [drink, setDrink] = useState();
@@ -8,7 +9,7 @@ const DetailsPage = ({ drinkId, onBack, buttonTitle = "Return to Search Results"
   const fetcher = () => {
     const token = localStorage.getItem("token");
 
-    fetch(`http://localhost:5000/drink/details/${drinkId}`, {
+    fetch(`${APIURL}/drink/details/${drinkId}`, {
       method: "GET",
       headers: new Headers({
         Accept: "application/json",

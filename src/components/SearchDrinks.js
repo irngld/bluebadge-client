@@ -5,6 +5,7 @@ import Details from "./Details";
 import background from "../img/searchDrinksBackground.jpg";
 import SearchBar from "@opuscapita/react-searchbar";
 import wood from "../img/wood.jpg";
+import APIURL from "../helpers/environment";
 
 const SearchDrinks = (props) => {
   const [currentDrinkId, setCurrentDrinkId] = useState();
@@ -18,10 +19,10 @@ const SearchDrinks = (props) => {
   const fetcher = (drink) => {
     setCurrentSearch(drink);
     const token = localStorage.getItem("token");
-    let defaultAPI = `http://localhost:5000/drink/type`;
+    let defaultAPI = `${APIURL}/drink/type`;
 
     if (ingredients?.includes(drink) == false) {
-      defaultAPI = `http://localhost:5000/drink/name`;
+      defaultAPI = `${APIURL}/drink/name`;
     }
 
     fetch(defaultAPI, {
@@ -44,7 +45,7 @@ const SearchDrinks = (props) => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/drink/ingredients`)
+    fetch(`${APIURL}/drink/ingredients`)
       .then((res) => res.json()) // JSON data parsed by `data.json()` call
       .then((obj) => {
         let ingredients = obj.drinks.map((ingredient) => ingredient.strIngredient1);
