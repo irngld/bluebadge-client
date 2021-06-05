@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { verifyPassword } from "../Utils/utilities";
-import { updateToken } from "./UserToken";
+import { updateToken, setUser } from "./UserToken";
 import background from "../../img/welcomeBackground2.jpg";
 import { Container, Form, Button } from "react-bootstrap";
 import APIURL from "../../helpers/environment";
@@ -34,6 +34,7 @@ const Auth = () => {
         .then((json) => {
           updateToken(json.token);
           console.log(json);
+          setUser(json.user);
           history.push("/home");
         })
         .catch((err) => {
