@@ -4,7 +4,7 @@ import { verifyPassword } from "../Utils/utilities";
 import { updateToken } from "./UserToken";
 import background from "../../img/welcomeBackground2.jpg";
 import { Container, Form, Button } from "react-bootstrap";
-import APIURL from "../helpers/environment";
+import APIURL from "../../helpers/environment";
 
 const Auth = () => {
   const [firstName, setFirstName] = useState("");

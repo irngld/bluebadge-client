@@ -1,7 +1,7 @@
 import { Switch, Route, useHistory } from "react-router-dom";
 import { useState } from "react";
 import { updateToken } from "./UserToken";
-import APIURL from "../helpers/environment";
+import APIURL from "../../helpers/environment";
 
 const Logout = () => {
   const history = useHistory();

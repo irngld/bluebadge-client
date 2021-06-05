@@ -1,7 +1,7 @@
 import { Redirect, useHistory } from "react-router-dom";
 import { useState } from "react";
 import { updateToken, setUser } from "./UserToken";
-import APIURL from "../helpers/environment";
+import APIURL from "../../helpers/environment";
 
 const Login = () => {
   const [email, setEmail] = useState("");
