@@ -20,7 +20,6 @@ const SearchDrinks = (props) => {
     setCurrentSearch(drink);
     const token = localStorage.getItem("token");
     let defaultAPI = `${APIURL}/drink/type`;
-
     if (ingredients?.includes(drink) == false) {
       defaultAPI = `${APIURL}/drink/name`;
     }
@@ -45,7 +44,13 @@ const SearchDrinks = (props) => {
   };
 
   useEffect(() => {
-    fetch(`${APIURL}/drink/ingredients`)
+    const token = localStorage.getItem("token");
+    fetch(`${APIURL}/drink/ingredients`, {
+    headers: new Headers({
+      "Content-Type": "application/json",
+      Authorization: token,
+    })// e.g. vodka
+  })
       .then((res) => res.json()) // JSON data parsed by `data.json()` call
       .then((obj) => {
         let ingredients = obj.drinks.map((ingredient) => ingredient.strIngredient1);
